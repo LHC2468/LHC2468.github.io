@@ -1,0 +1,11 @@
+// Example: script.js
+function changeContent(section) {
+  const mainContent = document.querySelector('main');
+  if (section === 'about') {
+    mainContent.innerHTML = '<h2>About Me</h2><p>This is my about section.</p>';
+  } else if (section === 'projects') {
+    mainContent.innerHTML = '<h2>My Projects</h2><p>Showcase your work.</p>';
+  } else if (section === 'contact') {
+    mainContent.innerHTML = '<h2>Contact</h2><p>Ways to reach me.</p>';
+  }
+}
