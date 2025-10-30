@@ -30,6 +30,9 @@
             Planned graduation in March 2026. He remains a part-time car mechanic and appreciates all the hiking and cycling opportunities the Bay has provided.</p>
         <p>[The whole site is under construction as I'm rebuilding it and learning HTML in the process. Appreciate your patience and understanding.] </p>
             <img src="DSC01949.jpg" alt="Screenshot of project" class="main-photo" />
+            <p>         </p>
+            <p>         </p>
+            <p>         </p>
       </section>
       <div class="logo-row">
           <img src="SEAS_logo.png" alt="SEAS" />
