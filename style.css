@@ -129,6 +129,50 @@ form button:hover {
   margin-bottom: 30px;
 }
 
+/* Project photos: keep multiple images on one line at the same height */
+.proj-photos {
+	display: flex;
+	gap: 1rem;
+	align-items: stretch;   /* makes children match cross-axis height */
+	flex-wrap: nowrap;      /* keep them on a single line; allow overflow if too many */
+	overflow-x: auto;      /* prevents layout break on very small screens */
+}
+
+.proj-figure {
+	margin: 0;             /* remove default figure margins */
+	display: flex;
+	flex-direction: column;
+	align-items: center;    /* center the image and caption */
+	flex: 0 0 auto;        /* don't grow/shrink */
+}
+
+.proj-photo {
+	height: var(--proj-photo-height, 500px); /* control height with CSS variable */
+	width: auto;            /* preserve aspect ratio */
+	display: block;
+	object-fit: cover;      /* fills height, cropping if needed */
+	border-radius: 6px;     /* optional visual polish */
+	margin-bottom: 0.5rem;  /* space between image and caption */
+}
+
+.proj-figure figcaption {
+	font-size: 0.9rem;
+	color: #666;
+	margin-top: 0.25rem;
+	text-align: center;
+	font-style: italic;
+}
+
+/* Responsive adjustments: allow wrapping and reduce heights on smaller screens */
+@media (max-width: 800px) {
+	.proj-photos { flex-wrap: wrap; }
+	.proj-photo { height: 160px; }
+}
+
+@media (max-width: 480px) {
+	.proj-photo { height: 120px; }
+}
+
 .main-photo {
   width: 40%;
   height: auto;
@@ -136,6 +180,7 @@ form button:hover {
   margin-left: auto;
   margin-right: auto;
 }
+
 
 #home p {
   max-width: 1200px;
@@ -145,9 +190,61 @@ form button:hover {
 }
 
 #home {
-  font-size: 1.15rem;
+  font-size: 1.3rem;
+}
+
+#research {
+  font-size: 1.3rem;
+}
+
+#industry_work {
+  font-size: 1.3rem;
 }
 
 #contact {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+}
+
+/* Site footer: end-of-page separator and credits */
+.site-footer {
+	background-color: transparent; /* keeps it subtle; change if you want a band */
+	padding: 1.25rem 0 2rem 0;
+	color: #444;
+}
+.site-footer .footer-inner {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 20px;
+	text-align: center;
+}
+.footer-sep {
+	border: none;
+	height: 1px;
+	background: linear-gradient(90deg, rgba(140,21,21,0.0), rgba(140,21,21,0.3), rgba(140,21,21,0.0));
+	margin: 0 0 0.6rem 0;
+}
+.end-note {
+	font-weight: 600;
+	color: #8C1515; /* match site accent color */
+	margin: 0 0 0.25rem 0;
+}
+.credits {
+	font-size: 0.9rem;
+	color: #666;
+	margin: 0;
+}
+.site-footer a {
+	color: #8C1515;
+	text-decoration: none;
+}
+.site-footer a:hover { text-decoration: underline; }
+
+@media (max-width: 480px) {
+	.site-footer { padding-bottom: 1.25rem; }
+	.end-note { font-size: 0.95rem; }
+	.credits { font-size: 0.85rem; }
+}
+
+#about {
+  font-size: 1.3rem;
 }
